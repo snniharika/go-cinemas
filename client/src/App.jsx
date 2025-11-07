@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Componants/Navbar'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import {Route, Routes, useLocation} from 'react-router-dom'
 import Landing from './Pages/LandingPage'
 import Movies from './Pages/Movies'
 import MovieDetails from './Pages/MovieDetails'
@@ -19,6 +19,7 @@ const App = () => {
       <Toaster />
       {!isAdminRoute && <Navbar/>}
       <Routes>
+        
         <Route path='/' element={<Landing/>} />
         <Route path='/movies' element={<Movies/>} />
         <Route path='/movies/:id' element={<MovieDetails/>} />
