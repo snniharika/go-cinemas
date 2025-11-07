@@ -1,18 +1,11 @@
-/* Fonts must be imported first */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-/* Tailwind directives (v4 uses this format) */
+/* Tailwind Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Tailwind v4 theme extension */
-@theme {
-  --color-primary: #F84565;
-  --color-primary-dull: #D63854;
-}
-
-/* Global Styles */
+/* Custom Styles */
 * {
   font-family: "Outfit", sans-serif;
   scrollbar-width: thin;
