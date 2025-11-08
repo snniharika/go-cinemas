@@ -10,7 +10,7 @@ const Navbar = () => {
   const {user}=useUser()
   const {openSignIn}=useClerk()
 
-const navigate=useNavigate()
+  const navigate=useNavigate()
 
   return (
     <div className="navbar">
@@ -20,9 +20,9 @@ const navigate=useNavigate()
 
       <div className="navbar-links">
         <X className="close-icon" onClick={()=> setIsOpen(!isOpen)} />
-        <Link onClick={()=> {scrollTo(0,0), setIsOpen(false)}} to="/">Home</Link>
-        <Link onClick={()=> {scrollTo(0,0), setIsOpen(false)}} to="/movies">Movies</Link>
-        <Link onClick={()=> {scrollTo(0,0), setIsOpen(false)}} to="/">My Tickets</Link>
+        <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to="/">Home</Link>
+        <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to="/movies">Movies</Link>
+        <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to="/">My Tickets</Link>
       </div>
 
       <div className="navbar-actions">
