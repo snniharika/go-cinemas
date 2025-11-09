@@ -1,7 +1,9 @@
 const getNowPlayingMovies = async (req, res) => {
     try {
 
-    } catch(error)
+    } catch(error){
+        
+    }
 }
 
-export default getNowPlayingMovies
+export default getNowPlayingMovies;
