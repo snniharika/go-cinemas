@@ -72,3 +72,45 @@ export const getOccupiedSeats = async (req, res) => {
         res.json({success: false, message: error.message})
     }
 }
+
+// get bookings for the authenticated user
+export const getMyBookings = async (req, res) => {
+    try{
+        const { userId } = req.auth();
+
+        console.log('getMyBookings called, userId:', userId);
+
+        const bookings = await Booking.find({ user: userId })
+            .populate({ path: 'show', populate: { path: 'movie' } });
+
+        console.log(`found ${bookings.length} bookings for user ${userId}`);
+
+        res.json({ success: true, bookings });
+    } catch (error) {
+        console.log(error.message);
+        res.json({ success: false, message: error.message });
+    }
+}
+
+// dev helper: return all bookings (no auth) — remove in production
+export const getAllBookings = async (req, res) => {
+    try {
+        const bookings = await Booking.find({}).populate({ path: 'show', populate: { path: 'movie' } });
+        res.json({ success: true, bookings });
+    } catch (error) {
+        console.log(error.message);
+        res.json({ success: false, message: error.message });
+    }
+}
+
+// dev helper: get bookings by user id (no auth) — remove in production
+export const getBookingsByUser = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const bookings = await Booking.find({ user: id }).populate({ path: 'show', populate: { path: 'movie' } });
+        res.json({ success: true, bookings });
+    } catch (error) {
+        console.log(error.message);
+        res.json({ success: false, message: error.message });
+    }
+}

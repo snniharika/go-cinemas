@@ -15,13 +15,14 @@ await connectDB()
 
 //Middleware 
 app.use(express.json());
-app.use(cors());
+// enable CORS with credentials for dev client (allows cookie-based auth)
+app.use(cors({ origin: true, credentials: true }));
 app.use(clerkMiddleware())
 
 //API Routes
 app.get('/', (req, res) => res.send('server is live!'))
 app.use('/api/inngest', serve({ client: inngest, functions }))
-app.use('api/booking', bookingRouter)
+app.use('/api/booking', bookingRouter)
 
 
 //Express app
