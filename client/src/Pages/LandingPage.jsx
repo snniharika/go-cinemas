@@ -1,13 +1,14 @@
-import React from 'react';
-import HeroSection from '../Components/HeroSection';
-import FeaturedSection from '../Components/FeaturedSection';
-import './LandingPage.css'; // Import normal CSS
+import React from "react";
+import HeroSection from "../Components/HeroSection";
+import FeaturedSection from "../Components/FeaturedSection";
+import Carousel from "../Components/Carousel";
+import "./LandingPage.css";
 
 const LandingPage = () => {
   return (
     <>
-    
       <HeroSection />
+      <Carousel />
       <FeaturedSection />
     </>
   );
