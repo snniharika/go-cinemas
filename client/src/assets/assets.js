@@ -297,7 +297,7 @@ export const dummyBookingData = [
         "show": {
             _id: "68352363e96d99513e4221a4",
             movie: dummyShowsData[0],
-            showDateTime: "2025-06-30T02:30:00.000Z",
+            showDateTime: "2025-06-27T02:30:00.000Z",
             showPrice: 59,
         },
         "amount": 98,

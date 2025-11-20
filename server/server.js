@@ -15,7 +15,6 @@ await connectDB()
 
 //Middleware 
 app.use(express.json());
-// enable CORS with credentials for dev client (allows cookie-based auth)
 app.use(cors({ origin: true, credentials: true }));
 app.use(clerkMiddleware())
 
