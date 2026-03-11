@@ -282,4 +282,5 @@ node server.js
 # Authors
 
 **Niharika** – Frontend development
+
 **Prithika** – Backend development
